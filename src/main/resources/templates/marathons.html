@@ -11,16 +11,15 @@
             <th>Marathon list</th> <th>Modify</th>
         </tr>
         <tr th:each="marathon: ${marathons}">
-            <td th:text="${marathon.title}">
-
+            <td>
+                <a th:text="${marathon.title}" th:href="@{users/}"></a>
             </td>
             <td>
                 <a th:href="@{delete/{id}(id=${marathon.id})}"> Delete </a>
             </td>
-<!--            <td>-->
-<!--                <a th:href="@{addMarathon/}"> AddMarathon </a>-->
-<!--            </td>-->
         </tr>
     </table>
+    <br><br>
+    <a th:href="@{addMarathon/}"> AddMarathon </a>
 </body>
 </html>
