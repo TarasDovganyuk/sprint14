@@ -28,10 +28,10 @@ public class MarathonController {
         return "marathons";
     }
 
-    @DeleteMapping("/delete/{marathonId}")
+    @GetMapping("/delete/{marathonId}")
     public String deleteMarathon(@PathVariable(name="marathonId") Long id) {
-//        marathonService.deleteMarathonById(id);
-        return "marathons";
+        marathonService.deleteMarathonById(id);
+        return "redirect:/marathons";
     }
 
 
