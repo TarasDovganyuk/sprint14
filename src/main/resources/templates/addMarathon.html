@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add marathon</title>
+</head>
+<body>
+<h1>Add marathon</h1>
+<form th:action="@{/saveMarathon}" th:object="${marathon}" method="post">
+    <p>Title: <input type="text" th:field="*{title}"/></p>
+    <p><input type="submit" value="Add marathon"/></p>
+</form>
+</body>
+</html>

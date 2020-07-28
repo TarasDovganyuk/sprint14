@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello marathons</title>
+</head>
+<body>
+    <h2>This is marathons page</h2>
+    <table>
+        <tr>
+            <th>Marathon list</th> <th>Modify</th>
+        </tr>
+        <tr th:each="marathon: ${marathons}">
+            <td th:text="${marathon.title}">
+
+            </td>
+            <td>
+                <a th:href="@{delete/{marathonId}(id=${marathon.id})}" th:method="delete"> Delete </a>
+            </td>
+<!--            <td>-->
+<!--                <a th:href="@{addMarathon/}"> AddMarathon </a>-->
+<!--            </td>-->
+        </tr>
+    </table>
+</body>
+</html>
