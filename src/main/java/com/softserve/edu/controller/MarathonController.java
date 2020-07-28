@@ -53,21 +53,12 @@ public class MarathonController {
         return "redirect:/marathons";
     }
 
-    @GetMapping("/users")
-    public String getAllUsers(Model model) {
-//        model.getAttribute("marathon");
-//        Marathon marathon = marathonService.getMarathonById()
-       List<User> users = new ArrayList<>();
-       User user1 = new User();
-       user1.setFirstName("Ivan");
-       users.add(user1);
+    @GetMapping("/users/{marathonId}")
+    public String getAllUsers(Model model, @PathVariable(name="marathonId") Long id) {
+        Set<User> users = marathonService.getMarathonById(id).getUsers();
         model.addAttribute("users", users);
         return "users";
     }
-
-
-
-
 
     //TODO implement other needed methods
 }

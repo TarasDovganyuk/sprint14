@@ -1,18 +1,17 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Hello marathons</title>
+    <title>Hello users</title>
 </head>
 <body>
-    <h2>This is marathons page</h2>
+    <h2>This is users for selected marathon page</h2>
     <table>
         <tr>
             <th>UserList</th>
         </tr>
         <tr th:each="user: ${users}">
             <td th:text="${user.firstName}">
-
             </td>
         </tr>
     </table>
